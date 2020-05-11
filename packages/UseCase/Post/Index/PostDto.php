@@ -1,6 +1,6 @@
 <?php
 
-namespace packages\UseCase\Post\GetList;
+namespace packages\UseCase\Post\Index;
 
 class PostDto
 {

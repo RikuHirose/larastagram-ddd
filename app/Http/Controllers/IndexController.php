@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Post;
 use App\Http\ViewModels\Post\Index\PostIndexViewModel;
-use packages\UseCase\Post\GetList\PostGetListUseCaseInterface;
+use packages\UseCase\Post\Index\PostIndexUseCaseInterface;
 
 class IndexController extends Controller
 {
@@ -13,7 +13,7 @@ class IndexController extends Controller
      * Show the application dashboard.
      *
      */
-    public function index(PostGetListUseCaseInterface $interactor)
+    public function index(PostIndexUseCaseInterface $interactor)
     {
         $response  = $interactor->handle();
         $viewModel = new PostIndexViewModel($response);

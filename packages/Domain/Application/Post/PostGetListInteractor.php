@@ -2,34 +2,34 @@
 
 namespace packages\Domain\Application\Post;
 
-use packages\UseCase\Post\GetList\PostGetListQueryServiceInterface;
-use packages\UseCase\Post\GetList\PostGetListUseCaseInterface;
-use packages\UseCase\Post\GetList\PostGetListResponse;
+use packages\UseCase\Post\Index\PostIndexQueryServiceInterface;
+use packages\UseCase\Post\Index\PostIndexUseCaseInterface;
+use packages\UseCase\Post\Index\PostIndexResponse;
 use packages\Post\Commons\PostModel;
 
-class PostGetListInteractor implements PostGetListUseCaseInterface
+class PostIndexInteractor implements PostIndexUseCaseInterface
 {
     /**
-     * @var PostGetListQueryServiceInterface
+     * @var PostIndexQueryServiceInterface
      */
-    private $postGetListQueryService;
+    private $postIndexQueryService;
 
     /**
-     * @param PostGetListQueryServiceInterface $postGetListQueryService
+     * @param PostIndexQueryServiceInterface $postIndexQueryService
      */
     public function __construct(
-        PostGetListQueryServiceInterface $postGetListQueryService
+        PostIndexQueryServiceInterface $postIndexQueryService
     ) {
-        $this->postGetListQueryService = $postGetListQueryService;
+        $this->postIndexQueryService = $postIndexQueryService;
     }
 
     /**
-     * @return PostGetListResponse
+     * @return PostIndexResponse
      */
-    public function handle(): PostGetListResponse
+    public function handle(): PostIndexResponse
     {
-        $posts = $this->postGetListQueryService->handle();
+        $posts = $this->postIndexQueryService->handle();
 
-        return new PostGetListResponse($posts);
+        return new PostIndexResponse($posts);
     }
 }

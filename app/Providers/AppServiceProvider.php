@@ -35,13 +35,13 @@ class AppServiceProvider extends ServiceProvider
     private function registerForInMemory(){
 
         $this->app->bind(
-            \packages\UseCase\Post\GetList\PostGetListUseCaseInterface::class,
-            \packages\Domain\Application\Post\PostGetListInteractor::class
+            \packages\UseCase\Post\Index\PostIndexUseCaseInterface::class,
+            \packages\Domain\Application\Post\PostIndexInteractor::class
         );
 
         $this->app->bind(
-            \packages\UseCase\Post\GetList\PostGetListQueryServiceInterface::class,
-            \packages\Infrastructure\QueryService\Post\PostGetListQueryService::class
+            \packages\UseCase\Post\Index\PostIndexQueryServiceInterface::class,
+            \packages\Infrastructure\QueryService\Post\PostIndexQueryService::class
         );
 
         // $this->app->bind(
@@ -53,7 +53,7 @@ class AppServiceProvider extends ServiceProvider
     private function registerForMock(){
 
         $this->app->bind(
-            \packages\UseCase\Post\GetList\PostGetListUseCaseInterface::class,
+            \packages\UseCase\Post\Index\PostIndexUseCaseInterface::class,
             \packages\MockInteractor\Post\MockPostGetInteractor::class
         );
 

@@ -1,15 +1,13 @@
 <?php
 
-namespace packages\UseCase\Post\GetList;
+namespace packages\UseCase\Post\Index;
 
-use packages\Post\Commons\PostModel;
-
-class PostGetListResponse
+class PostIndexResponse
 {
     public $posts;
 
     /**
-     * PostGetListResponse constructor.
+     * PostIndexResponse constructor.
      * @param PostModel[] $posts
      */
     public function __construct($posts)

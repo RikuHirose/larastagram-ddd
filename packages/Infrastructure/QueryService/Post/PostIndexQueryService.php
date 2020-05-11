@@ -3,10 +3,10 @@
 namespace packages\Infrastructure\QueryService\Post;
 
 use App\Post;
-use packages\UseCase\Post\GetList\PostDto;
-use packages\UseCase\Post\GetList\PostGetListQueryServiceInterface;
+use packages\UseCase\Post\Index\PostDto;
+use packages\UseCase\Post\Index\PostIndexQueryServiceInterface;
 
-class PostGetListQueryService implements PostGetListQueryServiceInterface
+class PostIndexQueryService implements PostIndexQueryServiceInterface
 {
     private $eloquent;
 

@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Post;
 use App\Http\Requests\PostStoreRequest;
+use packages\UseCase\Post\Store\PostGetListUseCaseInterface;
 
 class PostController extends Controller
 {
@@ -16,6 +17,7 @@ class PostController extends Controller
 
     public function store(PostStoreRequest $request)
     {
+
         if ($request->file('image')->isValid()) {
             $fileName = $request->file('image')->getClientOriginalName();
             // upload
